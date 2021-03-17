@@ -83,7 +83,7 @@ function BalanceCar(){
 
  
  //box
- var geometry = new THREE.BoxGeometry(30,2.5,10); //geometry 幾何 
+ var geometry = new THREE.BoxGeometry(10,10,30); //geometry 幾何 
  var material = new THREE.MeshNormalMaterial();
  var box = new THREE.Mesh(geometry,material);
  box.position.set(15,10,5);
@@ -95,10 +95,14 @@ function BalanceCar(){
  cylinder.position.set(5, 5, 5); //x,y,z 左邊 y+2.5
  cylinder2.position.set(5 + 20 , 5, 5);  // 右邊 y+2.5
  
+ var cylinder3 = new THREE.Mesh(new THREE.CylinderGeometry( 5, 5, 10, 32 ),new THREE.MeshNormalMaterial() );
+	cylinder3.position.set(15 , 20, -3);
+	
+ 
  cylinder.rotation.z = Math.PI / 2;
  cylinder2.rotation.z = Math.PI / 2;
  
- car.add(box,cylinder,cylinder2); 
+ car.add(box,cylinder,cylinder2,cylinder3); 
  car.rotation.y = Math.PI / 2;
  
 } 
